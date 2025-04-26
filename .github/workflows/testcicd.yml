@@ -13,6 +13,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: latest
+        distribution: OpenJDK
 
     # - name: setup maven
     #   uses: setup-maven/maven@v4

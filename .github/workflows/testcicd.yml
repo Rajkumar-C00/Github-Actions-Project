@@ -18,5 +18,8 @@ jobs:
         distribution: microsoft
         cache: maven
 
+    - name: build maven
+      run: mvn compile
+
     # - name: setup maven
     #   uses: setup-maven/maven@v4

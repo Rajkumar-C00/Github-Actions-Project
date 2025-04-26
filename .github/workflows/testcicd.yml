@@ -1,1 +1,16 @@
+name: test cicd
 
+on: 
+  workflow_dispatch
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: setup java
+      uses: setup-java/jdk@v4
+
+    - name: setup maven
+      uses: setup-maven/maven@v4

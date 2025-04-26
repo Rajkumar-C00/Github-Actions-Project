@@ -1,7 +1,9 @@
 name: test cicd
 
 on: 
-  workflow_dispatch
+  push:
+    branches:
+    - build
 
 jobs:
   build: 

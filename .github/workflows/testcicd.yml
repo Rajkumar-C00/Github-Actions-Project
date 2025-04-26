@@ -16,6 +16,7 @@ jobs:
       with:
         java-version: 21
         distribution: microsoft
+        cache: maven
 
     # - name: setup maven
     #   uses: setup-maven/maven@v4

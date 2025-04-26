@@ -12,7 +12,7 @@ jobs:
     - name: setup java
       uses: setup-java/jdk@v4
       with:
-        java-version: 17
+        java-version: latest
 
-    - name: setup maven
-      uses: setup-maven/maven@v4
+    # - name: setup maven
+    #   uses: setup-maven/maven@v4

@@ -18,8 +18,12 @@ jobs:
         distribution: microsoft
         cache: maven
 
-    - name: build maven
-      run: mvn compile
+    
+
+    - name: build maven and install maven
+      run: |
+        sudo apt update -y && sudo apt install maven -y
+        mvn compile
 
   security-checks: 
     runs-on: self-hosted

@@ -40,12 +40,14 @@ jobs:
 
     - name: install trivy
       run: |
+        sudo rm -f /etc/apt/sources.list.d/trivy.list
         sudo apt-get update
-        sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+        sudo apt-get install -y wget
         wget https://github.com/aquasecurity/trivy/releases/download/v0.58.0/trivy_0.58.0_Linux-64bit.deb
         sudo dpkg -i trivy_0.58.0_Linux-64bit.deb
         sudo apt-get update
-        sudo apt-get install -y trivy
+        sudo apt-get install -f
+        trivy --version
 
     - name: trivy scan
       run: trivy fs --format table -o fs-report.json .

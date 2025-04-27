@@ -31,13 +31,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # - name: setup java
-    #   uses: actions/setup-java@v4
-    #   with:
-    #     java-version: 21
-    #     distribution: microsoft
-    #     cache: maven
-
     - name: install trivy
       run: |
         sudo rm -f /etc/apt/sources.list.d/trivy.list
@@ -56,5 +49,5 @@ jobs:
       run: sudo apt install gitleaks -y
       
     - name: Gitleaks Code Scan
-      run: gitleaks detect source .
+      run: gitleaks detect source . -r gitleaks-report.json -f json
    

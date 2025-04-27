@@ -49,5 +49,10 @@ jobs:
       run: sudo apt install gitleaks -y
       
     - name: Gitleaks Code Scan
-      run: gitleaks detect source . -r gitleaks-report.json -f json
+      run: |
+        echo "AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE" > test.txt
+        git add test.txt
+        git commit -m "Add test file with secret" 
+        gitleaks detect source . -r gitleaks-report.json -f json
+        cat gitleaks-report.json
    

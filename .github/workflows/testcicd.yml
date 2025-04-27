@@ -61,6 +61,6 @@ jobs:
         echo "AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE" > test.txt
         git add test.txt
         git commit -m "Add test file with secret" 
-        gitleaks detect source . -r gitleaks-report.json -f json
+        gitleaks detect source . -r gitleaks-report.json -f json || true
         cat gitleaks-report.json
    

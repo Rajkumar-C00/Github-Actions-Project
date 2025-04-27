@@ -44,7 +44,7 @@ jobs:
         sudo apt-get install -y wget apt-transport-https gnupg lsb-release
         wget -qO /tmp/trivy-public.key https://aquasecurity.github.io/trivy-repo/deb/public.key
         sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/trivy.gpg /tmp/trivy-public.key
-        echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/trivy.list
+        echo "deb https://aquasecurity.github.io/trivy-repo/deb jammy main" | sudo tee /etc/apt/sources.list.d/trivy.list
         sudo apt-get update
         sudo apt-get install -y trivy
 
